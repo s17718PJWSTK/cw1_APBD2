@@ -7,9 +7,9 @@ namespace cw1
     {
         public static async System.Threading.Tasks.Task Main(string[] args)
         {
-
+            string url = args.Length > 0 ? args[0] : "https://www.pja.edu.pl";
             var client = new System.Net.Http.HttpClient();
-            var result = await client.GetAsync("https://www.pja.edu.pl");
+            var result = await client.GetAsync(url);
 
             if (result.IsSuccessStatusCode)
             {
